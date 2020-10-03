@@ -1,5 +1,13 @@
-<img src="/assets/img/f82at5sm.png">
+<img src="/assets/img/f82at5sm.png" height="250" width="250">
 <h1>Eat-Da-Burger!</h1>
+
+<ul>
+  {{#each burgers}}
+  {{#unless devoured}}
+      {{> burgers/burger-block devoured=false}}
+    {{/unless}}
+  {{/each}}
+</ul>
 
 <form class="create-form">
 
@@ -10,5 +18,3 @@
 
   <button type="submit" id="submit">Add Burger</button>
 </form>
-
-

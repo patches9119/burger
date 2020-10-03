@@ -17,6 +17,14 @@ var exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
+// Create `ExpressHandlebars` instance with a default layout.
+var hbs = exphbs.create({
+  extname: '.handlebars',
+  partialsDir: [
+      'views/partials/'
+  ]
+});
+
 // Import routes and give the server access to them.
 var routes = require("./controllers/burgers_controller.js");
 
